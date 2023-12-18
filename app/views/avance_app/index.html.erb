@@ -1,0 +1,39 @@
+<h1> Welcome to the Avance Application Manager </h1>
+
+<%= form_tag do%>
+  <p> Job Application ID: <%= text_field_tag(:jobIDInput)%> </p>
+  <p> Company: <%= text_field_tag(:companyInput)%> </p>
+  <p> Location: <%= text_field_tag(:locationInput)%> </p>
+  <p> Status: <%= text_field_tag(:statusInput)%> </p>
+  <p> Deadline: <%= text_field_tag(:deadlineInput)%> </p>
+  <p> Next Steps: <%= text_field_tag(:nextStepsInput)%> </p>
+  <p> <%= submit_tag "Submit Job" %> </p>
+<% end %>
+
+<table>
+	<thead>
+		<tr>
+			<th> Job </th>
+			<th> Company </th>
+      <th> Location </th>
+      <th> Status </th>
+      <th> Deadline </th>
+      <th> Next Steps </th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @allJobs.each do |job| %>
+			<tr>
+				<td> <%= job.jobID %> </td>
+				<td> <%= job.company %> </td>
+        <td> <%= job.location %> </td>
+        <td> <%= job.status %> </td>
+        <td> <%= job.deadline %> </td>
+        <td> <%= job.next %> </td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+
