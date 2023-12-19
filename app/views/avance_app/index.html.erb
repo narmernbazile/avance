@@ -1,7 +1,6 @@
 <h1> Welcome to the Avance Application Manager </h1>
 
 <%= form_tag do%>
-<<<<<<< Updated upstream
   <img src="<%= asset_path('IMG.JPG') %>" alt="Narmer and Lexe" width=300>
 
   <table style="table-layout:fixed;">
@@ -14,12 +13,12 @@
 
 	<tbody>
 			<tr>
-			  <td style="white-space:nowrap;"> Job Application ID</th>
+			  <td style="white-space:nowrap;"> Job Application ID</td>
 			  <td> <%= text_field_tag(:jobIDInput)%></td>
 			</tr>
 
       <tr>
-			  <td style="white-space:nowrap;"> Company </th>
+			  <td style="white-space:nowrap;"> Company </td>
 			  <td> <%= text_field_tag(:companyInput)%> </td>
 			</tr>
 
@@ -29,19 +28,25 @@
 			</tr>
 
       <tr>
-			  <td style="white-space:nowrap;"> Status </th>
+			  <td style="white-space:nowrap;"> Status </td>
 			  <td> <%= text_field_tag(:statusInput)%></td>
 			</tr>
 
       <tr>
-			  <td style="white-space:nowrap;"> Deadline </th>
+			  <td style="white-space:nowrap;"> Deadline </td>
 			  <td> <%= text_field_tag(:deadlineInput)%></td>
 			</tr>
 
       <tr>
-			  <td style="white-space:nowrap;"> Next Steps </th>
+			  <td style="white-space:nowrap;"> Next Steps </td>
 			  <td> <%= text_field_tag(:nextStepsInput)%></td>
 			</tr>
+
+		<tr>
+			<td> Job Type: </td> 
+			<td> <%= select_tag :jobTypeInput, options_for_select(['research', 'internship']) %> </td>
+		</tr>
+
 	</tbody>
 </table>
 
