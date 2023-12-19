@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_18_213642) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_19_043652) do
   create_table "applications", force: :cascade do |t|
     t.integer "appID"
     t.string "company"
@@ -31,6 +31,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_18_213642) do
     t.string "next"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "job_type"
   end
 
 end

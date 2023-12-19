@@ -28,20 +28,21 @@ class AvanceAppController < ApplicationController
     status = params[:statusInput]
     deadline = params[:deadlineInput]
     nextSteps = params[:nextStepsInput]
+    jobType = params[:jobTypeInput]
 
-    map = {"jobID" => jobID, "company" => company, "location" => location, "status" => status, "deadline" => deadline, "next" => nextSteps}
+    map = {"jobID" => jobID, "company" => company, "location" => location, "status" => status, "deadline" => deadline, "next" => nextSteps, "job_type" =>jobType}
     newRow = Job.new(map)
 
-    
+
     respond_to do |format|
       if newRow.save # saves data into database
         puts "success! :)"
-        format.html{redirect_to avance_app_url} 
+        format.html{redirect_to avance_app_url}
       else
         format.html{redirect_to "/"}
       end #end else
     end #end respond_to do
-  end #end enterJob function 
+  end #end enterJob function
 
   def deleteJob
     puts "-----called deleteJob------"
@@ -52,12 +53,12 @@ class AvanceAppController < ApplicationController
       if deleteMe != nil # saves data into database
         deleteMe.destroy
         puts "success! :)"
-        format.html{redirect_to avance_app_url} 
+        format.html{redirect_to avance_app_url}
       else
+        puts "Failed to delete job entry."
         format.html{redirect_to "/"}
       end #end else
     end #end respond_to do
   end #end deleteJob
 
 end
-

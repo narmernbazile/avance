@@ -1,6 +1,7 @@
 <h1> Welcome to the Avance Application Manager </h1>
 
 <%= form_tag do%>
+<<<<<<< Updated upstream
   <img src="<%= asset_path('IMG.JPG') %>" alt="Narmer and Lexe" width=300>
 
   <table style="table-layout:fixed;">
@@ -47,6 +48,19 @@
 <p style="display: inline-block;"> <%= submit_tag "Submit Job" %> </p>
 <p style="display: inline-block;"> <%= submit_tag "Delete Job" %> </p>
 
+=======
+  <p> Job Application ID: <%= text_field_tag(:jobIDInput)%> </p>
+  <p> Company: <%= text_field_tag(:companyInput)%> </p>
+  <p> Location: <%= text_field_tag(:locationInput)%> </p>
+  <p> Status: <%= text_field_tag(:statusInput)%> </p>
+  <p> Deadline: <%= text_field_tag(:deadlineInput)%> </p>
+  <p> Next Steps: <%= text_field_tag(:nextStepsInput)%> </p>
+  
+  <p> Job Type: <%= select_tag :jobTypeInput, options_for_select(['research', 'internship']) %> </p>
+  
+  <p> <%= submit_tag "Submit Job" %> </p>
+  <p> <%= submit_tag "Delete Job" %> </p>
+>>>>>>> Stashed changes
 <% end %>
 
 
@@ -61,6 +75,7 @@
       <th> Status </th>
       <th> Deadline </th>
       <th> Next Steps </th>
+      <th> Job Type </th>
 		</tr>
 	</thead>
 
@@ -73,6 +88,8 @@
         <td> <%= job.status %> </td>
         <td> <%= job.deadline %> </td>
         <td> <%= job.next %> </td>
+        <td> <%= job.job_type %> </td> <!-- Use snake_case here -->
+
 			</tr>
 		<% end %>
 	</tbody>

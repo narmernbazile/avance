@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   get 'avance_app' => 'avance_app#index'
   get '/' => 'avance_app#index'
   post '/' => 'avance_app#handlePost'
+  resources :internships, only: [:index]
 
-  
 end
