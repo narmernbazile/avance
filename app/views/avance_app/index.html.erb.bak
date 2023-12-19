@@ -1,7 +1,6 @@
 <h1> Welcome to the Avance Application Manager </h1>
 
 <%= form_tag do%>
-<<<<<<< Updated upstream
   <img src="<%= asset_path('IMG.JPG') %>" alt="Narmer and Lexe" width=300>
 
   <table style="table-layout:fixed;">
@@ -62,7 +61,6 @@
       <th> Status </th>
       <th> Deadline </th>
       <th> Next Steps </th>
-      <th> Job Type </th>
 		</tr>
 	</thead>
 
@@ -75,8 +73,6 @@
         <td> <%= job.status %> </td>
         <td> <%= job.deadline %> </td>
         <td> <%= job.next %> </td>
-        <td> <%= job.job_type %> </td> <!-- Use snake_case here -->
-
 			</tr>
 		<% end %>
 	</tbody>
