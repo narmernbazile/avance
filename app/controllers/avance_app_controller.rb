@@ -44,11 +44,20 @@ class AvanceAppController < ApplicationController
   end #end enterJob function 
 
   def deleteJob
+    puts "-----called deleteJob------"
     jobID = params[:jobIDInput]
-    map = {"jobID" => jobID}
-    deleteMe = Job.find(map)
-    deleteMe.destroy
+    deleteMe = Job.find_by(jobID: "#{jobID}".to_i)
+
+    respond_to do |format|
+      if deleteMe != nil # saves data into database
+        deleteMe.destroy
+        puts "success! :)"
+        format.html{redirect_to avance_app_url} 
+      else
+        format.html{redirect_to "/"}
+      end #end else
+    end #end respond_to do
   end #end deleteJob
 
-
 end
+
