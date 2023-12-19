@@ -1,15 +1,56 @@
 <h1> Welcome to the Avance Application Manager </h1>
 
 <%= form_tag do%>
-  <p> Job Application ID: <%= text_field_tag(:jobIDInput)%> </p>
-  <p> Company: <%= text_field_tag(:companyInput)%> </p>
-  <p> Location: <%= text_field_tag(:locationInput)%> </p>
-  <p> Status: <%= text_field_tag(:statusInput)%> </p>
-  <p> Deadline: <%= text_field_tag(:deadlineInput)%> </p>
-  <p> Next Steps: <%= text_field_tag(:nextStepsInput)%> </p>
-  <p> <%= submit_tag "Submit Job" %> </p>
-  <p> <%= submit_tag "Delete Job" %> </p>
+  <img src="<%= asset_path('IMG.JPG') %>" alt="Narmer and Lexe" width=300>
+
+  <table style="table-layout:fixed;">
+	<thead>
+		<tr>
+			<th> Field </th>
+			<th> Value</th>
+		</tr>
+	</thead>
+
+	<tbody>
+			<tr>
+			  <td style="white-space:nowrap;"> Job Application ID</th>
+			  <td> <%= text_field_tag(:jobIDInput)%></td>
+			</tr>
+
+      <tr>
+			  <td style="white-space:nowrap;"> Company </th>
+			  <td> <%= text_field_tag(:companyInput)%> </td>
+			</tr>
+
+      <tr>
+			  <td style="white-space:nowrap;"> Location </th>
+			  <td> <%= text_field_tag(:locationInput)%></td>
+			</tr>
+
+      <tr>
+			  <td style="white-space:nowrap;"> Status </th>
+			  <td> <%= text_field_tag(:statusInput)%></td>
+			</tr>
+
+      <tr>
+			  <td style="white-space:nowrap;"> Deadline </th>
+			  <td> <%= text_field_tag(:deadlineInput)%></td>
+			</tr>
+
+      <tr>
+			  <td style="white-space:nowrap;"> Next Steps </th>
+			  <td> <%= text_field_tag(:nextStepsInput)%></td>
+			</tr>
+	</tbody>
+</table>
+
+<p style="display: inline-block;"> <%= submit_tag "Submit Job" %> </p>
+<p style="display: inline-block;"> <%= submit_tag "Delete Job" %> </p>
+
 <% end %>
+
+
+<br> <hr>
 
 <table>
 	<thead>
